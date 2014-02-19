@@ -5,7 +5,7 @@ ActivityInfo {
   name: "algebra_by"
   dir: "src/activities/algebra_by"
   difficulty: 3
-  icon: "menus/algebra_by.svg"
+  icon: "algebra_by/algebra_by.svg"
   author: "Bruno Coudoin <bruno.coudoin@gcompris.net>"
   demo: false
   title: qsTr("Practice the multiplication operation")
