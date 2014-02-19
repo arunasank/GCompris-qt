@@ -97,7 +97,7 @@ QObject *ActivityInfoTree::menuTreeProvider(QQmlEngine *engine, QJSEngine *scrip
 	QStringList activities;
 	activities << "leftright" << "clickgame" <<
 				  "erase" << "erase_clic" << "erase_2clic" <<
-				  "hexagon";
+				  "hexagon" << "algebra_by";
 
 	for (int i = 0; i < activities.size(); ++i) {
 		QString url = QString("qrc:/gcompris/src/activities/%1/ActivityInfo.qml").arg(activities.at(i));

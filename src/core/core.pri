@@ -11,6 +11,7 @@ HEADERS += \
 
 APP_FILES = \
 	$$PWD/ActivityBase.qml \
+        $$PWD/Balloon.qml \
 	$$PWD/BarButton.qml \
 	$$PWD/BarEnumContent.qml \
 	$$PWD/Bar.qml \
@@ -19,7 +20,9 @@ APP_FILES = \
 	$$PWD/DialogBackground.qml \
 	$$PWD/DialogHelp.qml \
 	$$PWD/GCButtonStyle.qml \
-	$$PWD/main.qml
+        $$PWD/main.qml \
+        $$PWD/NumPad.qml
+
 
 APP_FILES += \
 	$$PWD/resource/bar_about.svgz \
@@ -47,5 +50,6 @@ APP_FILES += \
 	$$PWD/resource/bonus/smiley_bad.png \
 	$$PWD/resource/bonus/smiley_good.png \
 	$$PWD/resource/bonus/tux_bad.png \
-	$$PWD/resource/bonus/tux_good.png
+        $$PWD/resource/bonus/tux_good.png \
+        $$PWD/resource/tuxballoon.png
 
