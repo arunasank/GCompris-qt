@@ -21,7 +21,10 @@ APP_FILES = \
 	$$PWD/DialogHelp.qml \
 	$$PWD/GCButtonStyle.qml \
         $$PWD/main.qml \
-        $$PWD/NumPad.qml
+        $$PWD/NumPad.qml \
+        $$PWD/ReadyButton.qml \
+        $$PWD/Score.qml
+
 
 
 APP_FILES += \
