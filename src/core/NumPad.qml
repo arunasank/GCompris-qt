@@ -1,4 +1,6 @@
+import QtQuick 2.0
 import QtQuick 2.1
+import QtQuick 2.2
 import QtQml.Models 2.1
 import QtQuick.Controls 1.0
 import QtQuick.Window 2.1
@@ -34,6 +36,7 @@ Item{
                 height: parent.height/5
                 color: colours[index]
                 border.color: Qt.darker(color)
+                border.width: 2
 
                 Text{
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -44,11 +47,21 @@ Item{
 
                 MouseArea{
                     anchors.fill:parent
-
+                    //enabled : ApplicationInfo.isMobile ? true : false
                     onClicked :{
                         if(answer.length < 2)
-                            answer += numbers[index]
+                            answer += numbers[index];
+
                     }
+                    onPressed: {
+                        leftPanel.children[index].color = Qt.lighter(colours[index])
+                        leftPanel.children[index].border.width = 5
+                    }
+                    onReleased: {
+                        leftPanel.children[index].color = colours[index]
+                        leftPanel.children[index].border.width = 2
+                    }
+
                 }
 
             }
@@ -71,6 +84,7 @@ Item{
                 height: parent.height/5
                 color: colours[index]
                 border.color: Qt.darker(color)
+                border.width: 2
 
                 Text{
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -79,11 +93,20 @@ Item{
                     font.pixelSize: parent.height/2
                 }
                 MouseArea{
+                    //enabled : ApplicationInfo.isMobile ? true : false
                     anchors.fill:parent
 
                     onClicked: {
                         if(answer.length < 2)
                             answer += numbers[index] + 5
+                    }
+                    onPressed: {
+                        rightPanel.children[index].color = Qt.lighter(colours[index])
+                        rightPanel.children[index].border.width = 5
+                    }
+                    onReleased: {
+                        rightPanel.children[index].color = colours[index]
+                        rightPanel.children[index].border.width = 2
                     }
                 }
             }
@@ -104,17 +127,28 @@ Item{
             }
 
             MouseArea{
+                //enabled : ApplicationInfo.isMobile ? true : false
                 anchors.fill:parent
                 onClicked:{
                     answer = answer.substring(0,answer.length - 1)
                 }
+                onPressed: {
+                    backspaceButton.color = Qt.lighter("white")
+                    backspaceButton.border.width = 5
+                }
+
+                onReleased: {
+                    backspaceButton.color = "white"
+                    backspaceButton.border.width = 2
+                }
             }
 
         }
+
     }
 
     function resetText()
     {
-        answer =""
+        answer ="";
     }
 }

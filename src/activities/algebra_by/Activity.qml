@@ -63,7 +63,18 @@ ActivityBase {
                 Activity.nextLevel()
 
             }
-            onHomeClicked: home()
+            onHomeClicked: {
+
+                home()
+                iamReady.visible = true
+                firstOp.visible = false
+                secondOp.visible = false
+                balloon.stopMoving()
+                balloon.visible = false
+                score.currentSubLevel = 0
+                score.numberOfSubLevels = 10
+
+            }
         }
 
         ReadyButton{
@@ -100,7 +111,7 @@ ActivityBase {
 
         NumPad {
             id:numpad
-
+            enabled: !iamReady.visible
             onAnswerChanged:{
                 Activity.questionsLeft(numpad, score, firstOp, secondOp, balloon, iamReady)
             }
